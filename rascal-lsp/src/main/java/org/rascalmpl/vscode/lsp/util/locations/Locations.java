@@ -55,7 +55,7 @@ public class Locations {
     }
 
     public static Location toLSPLocation(ISourceLocation sloc, ColumnMaps cm) {
-        return new Location(sloc.getURI().toString(), toRange(sloc, cm));
+        return new Location(sloc.getScheme() + "://" + sloc.getAuthority() + sloc.getPath(), toRange(sloc, cm));
     }
 
     public static Range toRange(ISourceLocation sloc, ColumnMaps cm) {
